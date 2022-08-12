@@ -1,0 +1,44 @@
+.r-red {
+    background-color: red;
+  }
+  .bgRed {
+    background-color: red;
+  }
+  
+  .rating-modal {
+    width: 300px;
+    margin-left: 1rem;
+  }
+  
+  Button > * {
+    pointer-events: none;
+  }
+  
+  .icon-btn {
+    border: none;
+  color: black;
+    background: none;
+  
+    /* margin-right: 1rem; */
+  }
+
+  .icon-btn:hover {
+   border: none;
+   color: white;
+   background: green;
+  
+    /* margin-right: 1rem; */
+  }
+  
+  .iconSize {
+    width: 20px; 
+    height: 20px;
+  }
+  
+  .closeBtn {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 6%;
+    top: 2%;
+  }

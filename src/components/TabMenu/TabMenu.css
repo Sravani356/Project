@@ -1,0 +1,10 @@
+.tabMenu {
+    color: #e76f51
+}
+
+.tabMenu:hover {
+    color: white;
+    background-color: #556b2f
+}
+
+

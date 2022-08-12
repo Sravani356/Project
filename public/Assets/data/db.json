@@ -1,0 +1,156 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "brand": "Roadster",
+      "category": "Regular",
+      "img": "Assets/images/images/Product1.png",
+      "description": "Black checked opaque Casual shirt ,has a spread collar, button placket, 1 patch pocket, long roll-up sleeves, curved hem",
+      "fit": "Slim fit",
+      "price": "Rs. 519/-",
+      "discount": 0,
+      "ratingsCount": 4,
+      "ratingsValue": 350,
+      "availibilityCount": 5,
+      "cartCount": 0,
+      "reviews": [
+        {
+          "name": "sravani",
+          "mail": "abc@gmail.com",
+          "phone": "91234567",
+          "message": "Hi",
+          "date": "2022-08-09T12:08:34.513Z",
+          "ratings": "4"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "brand": "Mast & Harbour",
+      "category": "Printed",
+      "img": "Assets/images/images/Product2.png",
+      "description": "Red and Blue checked casual shirt, has a spread collar, long sleeves, button placket, and curved hem",
+      "fit": "Regular fit",
+      "price": "Rs. 800/-",
+      "discount": 0,
+      "ratingsCount": 4,
+      "ratingsValue": 350,
+      "availibilityCount": 5,
+      "cartCount": 0,
+      "reviews": [
+        {
+          "name": "sravani",
+          "email": "abc@gmail.com",
+          "phone": "12345678",
+          "message": "nice Product..!",
+          "date": "2022-08-09T12:34:47.113Z",
+          "ratings": "4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "brand": "Roadster",
+      "category": "Plain",
+      "img": "Assets/images/images/Product3.png",
+      "description": "Blue printed casual shirt, has a mandarin collar collar, button placket, long sleeves, curved hem",
+      "fit": "Regular fit",
+      "price": "Rs.926/-",
+      "discount": 0,
+      "ratingsCount": 4,
+      "ratingsValue": 150,
+      "availibilityCount": 135,
+      "cartCount": 0,
+      "reviews": [
+        {
+          "name": "sravanii",
+          "email": "srvz@gmail.com",
+          "phone": "91234567",
+          "message": "Nice Product..!!",
+          "date": "2022-08-09T20:37:47.812Z",
+          "ratings": "5"
+        },
+        {
+          "name": "alex",
+          "email": "alex@gmail.com",
+          "phone": "123456",
+          "message": "Great Fit..! Loved it!!",
+          "date": "2022-08-09T23:59:07.212Z",
+          "ratings": "5"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "brand": "HIGHLANDER",
+      "category": "Printed",
+      "img": "Assets/images/images/Product4.png",
+      "description": "Sky Blue printed striped casual shirt, has a mandarin collar collar, button placket, long sleeves, curved hem",
+      "fit": "Slim fit",
+      "price": "Rs.926/-",
+      "discount": 0,
+      "ratingsCount": 4,
+      "ratingsValue": 250,
+      "availibilityCount": 15,
+      "cartCount": 0,
+      "reviews": [
+        {
+          "name": "sravanii",
+          "email": "srvz@gmail.com",
+          "phone": "91234567",
+          "message": "Nice Product..!!",
+          "date": "2022-08-09T20:37:47.812Z",
+          "ratings": "5"
+        }
+      ]
+    }
+  ],
+  "aboutData": [
+    {
+      "id": 1,
+      "title": "We have the capabilities and experience to deliver the products you need to move forward.",
+      "history": "The story of Spark Clothings started in Bangalore in the year 2000 with wholesale of hosiery and woven garments, catering to the needs of various wholesalers and retailers across India. Bangalore textiles industry stands at USD 4.2 billion in 2012 and is globally famous for its hosiery products. The City has more than 5,000 garment manufacturing units and job work units, and is one of the most organised processing and finishing garment clusters in India. The firm came into existence in the year 2005 as a Sole Proprietorship concern in Bangalore, Tamil Nadu. In the year 2007 it started as family enterprise with a tiny shop selling Men's apparel at much lesser price than market and expanded to full men's wear during next six months. The journey continued and in 2011 launched its first exclusively brand store in Bangalore with bigger retailing space for Men's wear, Women's wear and Kids clothing. Spark Clothings is engaged into multiple business activities which include manufacturing, supplying and trading in a wide array of clothing products which include Women's Wear, Polo T-Shirt, Girls T-Shirt and many more. The range offered is well acknowledged for their availability in stylish pattern, perfect finish and comfort in wearing. Products are developed after careful attention and hard work of Spark team. It aspires to render quality striven products which guarantee cheerfulness of end customer."
+    }
+  ],
+  "contactData": [
+    {
+      "id": 1,
+      "address": "280 ParK Avenue Z,Cross cut Complex, Bangalore, India",
+      "phone": [
+        "(91) 987 654 3210",
+        "(91) 987 654 3211"
+      ],
+      "email": "contact@sparkclothing.com"
+    }
+  ],
+  "getInTouchData": [
+    {
+      "id": 1,
+      "name": "aswin",
+      "email": "aswin210@gmail.com",
+      "phone": "3333333123",
+      "message": "Hi"
+    },
+    {
+      "name": "sravani",
+      "mail": "sravani@gmail.com",
+      "phone": "91234567",
+      "message": "hi",
+      "id": 2
+    },
+    {
+      "name": "Alex",
+      "mail": "alex@gmail.com",
+      "phone": "123456",
+      "message": "Great!",
+      "id": 3
+    },
+    {
+      "name": "jan",
+      "mail": "srvz@gmail.com",
+      "phone": "7567890987",
+      "message": "yes",
+      "id": 4
+    }
+  ]
+}
