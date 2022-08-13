@@ -8,8 +8,6 @@ import { FaPencilAlt } from "react-icons/fa";
 // import FeedBackModal from "../../component/feedBackModal/FeedBackModal";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { BsTagFill } from "react-icons/bs";
-import { FaBalanceScale } from "react-icons/fa";
-import { FaLeaf } from "react-icons/fa";
 import { FaRupeeSign } from "react-icons/fa";
 import FeedBackModal from "../../components/feedBackModal/FeedBackModal";
 // import Reviews from "../../component/reviews/Reviews";
@@ -38,7 +36,7 @@ function ProductDetail() {
 
   useEffect(() => {
     fetchProductDetail();
-  }, [id]);
+  });
   console.log(data);
 
   return (

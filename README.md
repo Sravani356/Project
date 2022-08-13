@@ -8,4 +8,4 @@
 
 # command to check the overall code coverage
 
-    npm run test -- --coverage
+    set CI=true && npm test -- --coverage

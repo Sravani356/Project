@@ -1,6 +1,5 @@
 import { Container, Nav, NavItem, Navbar } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
-import Products from "../../Pages/productsPage/Products";
 import React from "react";
 
 function NavbarComponent() {

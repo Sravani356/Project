@@ -1,5 +1,4 @@
 import HomePageCarousel from "../../components/carousel/Carousel";
-import Products from '../productsPage/Products'
 import React from "react";
 import TabMenu from "../../components/TabMenu/TabMenu";
 
