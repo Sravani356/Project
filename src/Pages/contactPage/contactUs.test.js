@@ -2,7 +2,6 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import ContactUs from "./ContactUs";
 import userEvent from '@testing-library/user-event'
 
-
 import GetInTouch from './GetInTouch';
 import axios from "axios";
 import { contactData, getInTouchData } from '../../Mock_Data';
@@ -13,7 +12,7 @@ jest.mock("axios");
 
 test("ContactUs", () => {
     axios.get.mockResolvedValue({ data: contactData });
-    render(<ContactUs />);
+    render(<ContactUs data={contactData}/>);
     const todoList = waitFor(() => screen.findAllByTestId("contactUs"));
     expect(todoList).toBeDefined();
 });
@@ -30,21 +29,7 @@ test("GetInTouch", () => {
 });
 
 
-
-// test('onSubmit', async () => {
-//     render(<GetInTouch />);
-
-//     fireEvent.submit(screen.getByTestId("submit-btn"))
-//     expect(screen.getByTestId("submit-btn")).toBeInTheDocument()
-
-//     axios.post.mockResolvedValue({ data: getInTouchData });
-
-
-//     // global.fetch = () => Promise.resolve({ data: () => Promise.resolve(getInTouchData) })
-
-// });
-
-test("onChange", () => {
+test("onChange in GetInTouch Component", () => {
 
     render(<GetInTouch />)
     const newUser = {

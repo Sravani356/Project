@@ -1,21 +1,21 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-
+import { render, screen, fireEvent } from "@testing-library/react";
 import { act } from "react-test-renderer";
 
 import ProductDetail, { handling } from "./ProductDetail";
+
 import axios from "axios";
 import { Data } from "../../Mock_Data";
 
 
-describe("", () => {
-    test("The menudetails component  shows menu details when it starts up", () => {
+describe("<PRODUCTDETAIL/>", () => {
+    test("The productdetails rendering", () => {
         // arrange and act
         render(<ProductDetail />);
     })
 
-    test("Simulating the icon button in menudetails", async () => {
+    test("Simulating the icon button in productdetails", async () => {
         // arrange and act
         const { findByTestId } = render(<ProductDetail />);
         const icnButton = await screen.findByTestId("icon");
@@ -36,20 +36,10 @@ describe("", () => {
         expect(spy).toHaveBeenCalled();
     });
 
-    //     test('should return response records', () => {
-    //         const response = new Response(undefined, {
-    //             status: 200,
-    //             statusText: 'ok'
-    //         });
-    //         response.json = () => Promise.resolve(MOCK_PROJECTS);
-    //         jest
-    //         .spyOn(window, 'fetch')
-    //         .mockImplementation(() => Promise.resolve(response));
-
-    //         return projectAPI.get().then((data) => expect(data).toEqual(MOCK_PROJECTS))
-    // })
-    // test('should return Products', () => {
     test('should return records', () => {
+
+        const setData = jest.fn();
+        render(<ProductDetail />);
 
         const fetchProductDetail = async () => {
             const response = axios
@@ -76,7 +66,6 @@ describe("", () => {
 
 });
 
-// });
 
 
 

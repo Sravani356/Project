@@ -6,6 +6,7 @@ import Reviews from "./Reviews";
 
 
 it("checking rendering", () => {
+  
   render(<Reviews data={Data} />);
 
   const el = screen.getByText(/Akash/i);

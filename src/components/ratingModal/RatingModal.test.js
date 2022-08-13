@@ -43,13 +43,9 @@ test('onSubmit', async () => {
             setShowRating={setShowRating}
             data={Data}
         />);
-    // const user = userEvent.setup();
-    // expect(handleEdit).toBeCalledTimes(1);
-
 
     fireEvent.click(screen.getByTestId("submit-btn"))
     expect(screen.getByTestId("submit-btn")).toBeInTheDocument()
 
-    // axios.post.mockResolvedValue({ data: Data });
 });
 

@@ -1,23 +1,7 @@
 import { Container, Nav, NavItem, Navbar } from "react-bootstrap";
-
-import AboutUs from "../../Pages/aboutUsPage/AboutUs";
-import ContactUs from "../../Pages/contactPage/ContactUs";
-import Home from "../../Pages/homePage/home";
 import { NavLink } from 'react-router-dom';
 import Products from "../../Pages/productsPage/Products";
 import React from "react";
-
-// import '../index.css';
-
-
-
-
-
-// import AboutUs from "../aboutUs";
-// import Home from "../home";
-// import ContactUs from "./contact";
-// import Products from "./products";
-
 
 function NavbarComponent() {
     return (
