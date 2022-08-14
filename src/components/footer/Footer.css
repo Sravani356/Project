@@ -1,0 +1,12 @@
+
+#footer {
+    padding-top: 65px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center; 
+    justify-content: center;
+    border-top: 5px;
+}

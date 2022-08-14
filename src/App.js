@@ -9,6 +9,7 @@ import NavbarComponent from "./components/navbar/Navbar";
 // import ProductDetailPage from './Pages/ProductDetailPage';
 import Products from "./Pages/productsPage/Products";
 import ProductDetail from "./Pages/productDetails/ProductDetail";
+import Footer from "./components/footer/Footer";
 // import { useEffect } from 'react';
 
 function App() {
@@ -30,7 +31,10 @@ function App() {
             element={<ProductDetail />}
           />
         </Routes>
+
       </HashRouter>
+      <Footer />
+
     </div>
   );
 }

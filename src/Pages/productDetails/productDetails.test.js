@@ -36,18 +36,23 @@ describe("<PRODUCTDETAIL/>", () => {
         expect(spy).toHaveBeenCalled();
     });
 
-    test('should return records', () => {
+    test('should return records', async () => {
 
         const setData = jest.fn();
         render(<ProductDetail />);
 
         const fetchProductDetail = async () => {
-            const response = axios
-                .get(`http://localhost:5000/data/1`)
-                .then((response) => {
-                    setData(response.data);
-                })
-                .catch((err) => err);
+            try {
+
+                axios
+                    .get(`http://localhost:5000/data/1`)
+                    .then((response) => {
+                        setData(response.data);
+                    })
+            }
+            catch (err) {
+                console.log(err)
+            };
         };
         const response = new Response(undefined, {
             status: 200,

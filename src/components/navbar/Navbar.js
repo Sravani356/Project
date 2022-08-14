@@ -6,11 +6,11 @@ function NavbarComponent() {
     return (
         <>
             <div>
-                <Navbar style={{ backgroundColor: '#556b2f' }} collapseOnSelect expand="lg" bg="#f5ee2w" variant="dark">
+                <Navbar style={{ backgroundColor: '#556b2f' }} collapseOnSelect expand="lg" bg="#f5ee2w" variant="dark" className="fixed-top">
                     <Container>
                         <Navbar.Brand href="/">
 
-                            <img style={{ borderRadius: "6px" }} src="/Assets/images/images/LOGO.jpg" alt="logo" width="200" height="90" />
+                            <img style={{ borderRadius: "6px" }} src="/Assets/images/images/LOGO.jpg" alt="logo" width="200" height="80" />
 
 
                         </Navbar.Brand>

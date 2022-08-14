@@ -1,4 +1,12 @@
-/* .card {
-    background
-} */
 
+
+.card {
+    border-top : 5px solid #e76f51;
+}
+
+#card {
+    padding-top : 45px;
+    width: auto;
+    background-color: #556b2f;
+    color: white
+}

@@ -1,16 +1,13 @@
 /* eslint-disable no-unused-vars */
-// import "./MenuDetail.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Image, Row, Button, Container } from "react-bootstrap";
 import { FaPencilAlt } from "react-icons/fa";
-// import FeedBackModal from "../../component/feedBackModal/FeedBackModal";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { BsTagFill } from "react-icons/bs";
 import { FaRupeeSign } from "react-icons/fa";
 import FeedBackModal from "../../components/feedBackModal/FeedBackModal";
-// import Reviews from "../../component/reviews/Reviews";
 import './productDetails.css';
 import Reviews from "../../components/reviews/Reviews";
 import { MdReviews } from "react-icons/md";
@@ -35,9 +32,8 @@ function ProductDetail() {
   };
 
   useEffect(() => {
-    fetchProductDetail();
-  });
-  console.log(data);
+    fetchProductDetail()
+  }, [id])  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Container>
