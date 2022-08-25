@@ -15,9 +15,11 @@ function Products({ type }) {
     }
 
     useEffect(() => {
-        fetchProductDetails();
+        if (products.length === 0) {
+            fetchProductDetails();
+        }
         setCategoryType(type ? type : "All")
-    }, [categoryType, type])
+    }, [categoryType, type, products])
 
     return (
         <>
