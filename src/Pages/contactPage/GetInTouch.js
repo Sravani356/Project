@@ -1,36 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState2, useEffect } from "react";
 import { Button, Col, Row, Form, Image } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 import "./contactUs.css";
 import axios from "axios";
 
 function GetInTouch(props) {
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const [values, setValues] = useState({
-        username: "",
-        mail: "",
-        phone: "",
-        message: "",
-    });
-
-    const changeHandler = (event) => {
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value,
-        });
-    };
-
-    const formSubmitHandler = async (event) => {
-        event.preventDefault();
-        const user = {
-            name: values.username,
-            mail: values.mail,
-            phone: values.phone,
-            message: values.message,
-        };
+    const formSubmitHandler = async (data) => {
 
         await axios
-            .post("http://localhost:5000/getInTouchData", user, {
+            .post("http://localhost:5000/getInTouchData", data, {
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -43,37 +24,49 @@ function GetInTouch(props) {
             <Row className="my-5">
                 <Col>
                     <h1>Get In Touch</h1>
-                    <Form onSubmit={formSubmitHandler} data-testid="submit-btn">
+                    <Form onSubmit={handleSubmit(formSubmitHandler)} data-testid="submit-btn">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control
                                 name="username"
                                 type="text"
-                                placeholder="name"
+                                placeholder="Name"
+
                                 data-testid="contact"
-                                value={values.username}
-                                onChange={changeHandler}
-                                required
+                                {...register("username", { required: "Username is required!" })}
                             />
+                            <p className="text-red" id="text">{errors.username?.message}</p>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control
                                 name="mail"
                                 type="email"
                                 placeholder="Email"
-                                value={values.mail}
-                                onChange={changeHandler}
-                                required
+
+                                {...register("mail", {
+                                    required: "Email is required!",
+                                    pattern: {
+                                        value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/,
+                                        message: "Enter a valid email ID"
+                                    }
+                                })}
                             />
+                            <p className="text-red" id="text1">{errors.mail?.message}</p>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control
                                 name="phone"
                                 type="phone"
                                 placeholder="phone"
-                                value={values.phone}
-                                onChange={changeHandler}
-                                required
+
+                                {...register("phone", {
+                                    required: "Phone is required!",
+                                    pattern: {
+                                        value: /^\d{10}$/,
+                                        message: "Enter valid phone number!"
+                                    }
+                                })}
                             />
+                            <p className="text-red" id="text2">{errors.phone?.message}</p>
                         </Form.Group>
                         <Form.Group
                             className="mb-3"
@@ -83,11 +76,11 @@ function GetInTouch(props) {
                                 as="textarea"
                                 rows={3}
                                 name="message"
-                                value={values.message}
-                                onChange={changeHandler}
                                 placeholder="Message"
-                                required
+
+                                {...register("message", { required: "Message is required!" })}
                             />
+                            <p className="text-red" id="text3">{errors.message?.message}</p>
                         </Form.Group>
                         <Button variant="danger" type="submit">
                             Submit
