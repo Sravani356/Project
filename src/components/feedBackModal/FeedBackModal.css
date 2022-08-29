@@ -4,3 +4,11 @@
 .text-white {
   color: white;
 }
+.text-red {
+  color: red;
+}
+
+.foo-bar {
+  backgroundColor: #556b2f;
+  color: #e76f51;
+}

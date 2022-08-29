@@ -3,42 +3,36 @@ import React, { useState } from "react";
 import { Modal, Button, Col, Row, Form } from "react-bootstrap";
 import RatingModal from "../ratingModal/RatingModal";
 import "./FeedBackModal.css";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
 
 function FeedBackModal(props) {
-  
+
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
   const [showRating, setShowRating] = useState(false);
-  const handleClose = () => props.setShow(false);
-  const [values, setValues] = useState({
-    username: "",
-    mail: "",
-    phone: "",
-    message: "",
-  });
 
-  const changeHandler = (event) => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value,
-    });
-  };
-  const feedBackDetails = {
-    name: values.username,
-    email: values.mail,
-    phone: values.phone,
-    message: values.message,
-    date: new Date(),
-  };
-  const checktheuser=()=>{
-   if( props.data.reviews.find(user=>user.email===feedBackDetails.email)){
-    
-    alert("review submitted already")
+  const [feedBackDetails, setFeedBackDetails] = useState({});
 
-   }
-    
-    else{
-      setShowRating(true)
+  const handleClose = (e) => {
+    reset();
+    props.setShow(false);
+  };
+
+
+  const checktheuser = (val) => {
+
+    setFeedBackDetails(val);
+
+    if (props.data.reviews[props.data.reviews.findIndex(user => user.username === val.username)] || props.data.reviews[props.data.reviews.findIndex(user => user.mail === val.mail)]) {
+      toast("You have already Submitted the Review!");
+      return;
     }
-  }
+    else {
+      setShowRating(true);
+    }
+  };
+
   return (
     <div>
       <Modal show={props.show} onHide={handleClose}>
@@ -54,10 +48,10 @@ function FeedBackModal(props) {
                   <Form.Control
                     type="text"
                     placeholder="Name"
-                    name="username"
-                    value={values.username}
-                    onChange={changeHandler}
+                    {...register("username", { required: "Username is required" })}
                   />
+                  <p className="text-red">{errors.username?.message}</p>
+
                 </Form.Group>
               </Col>
               <Col xs={12} lg={6}>
@@ -66,10 +60,16 @@ function FeedBackModal(props) {
                   <Form.Control
                     type="email"
                     placeholder="Email"
-                    name="mail"
-                    value={values.mail}
-                    onChange={changeHandler}
+                    {...register("mail", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/,
+                        message: "Enter a valid email ID"
+                      }
+                    })}
                   />
+                  <p className="text-red">{errors.mail?.message}</p>
+
                 </Form.Group>
               </Col>
             </Row>
@@ -81,11 +81,16 @@ function FeedBackModal(props) {
                   <Form.Control
                     type="text"
                     placeholder="Phone"
-                    name="phone"
-                    value={values.phone}
-                    onChange={changeHandler}
-                    required
+                    {...register("phone", {
+                      required: "Phone is required",
+                      pattern: {
+                        value: /^\d{10}$/,
+                        message: "Enter valid phone number"
+                      }
+                    })}
                   />
+                  <p className="text-red">{errors.phone?.message}</p>
+
                 </Form.Group>
               </Col>
             </Row>
@@ -98,11 +103,13 @@ function FeedBackModal(props) {
                     as="textarea"
                     rows={3}
                     name="message"
-                    value={values.message}
-                    onChange={changeHandler}
+
                     placeholder="Message"
-                    required
+                    {...register("message", { required: "Message is required" })}
+
                   />
+                  <p className="text-red">{errors.message?.message}</p>
+
                 </Form.Group>
               </Col>
             </Row>
@@ -110,16 +117,16 @@ function FeedBackModal(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-        <Button
-          type="submit"
+          <Button
+            type="submit"
             className="btn-red"
             data-testid="next-click"
-            onClick={checktheuser}
+            onClick={handleSubmit(checktheuser)}
           >
             Next
           </Button>
 
-          <Button className="btn-red" onClick={handleClose}>
+          <Button className="btn-red" onClick={handleClose} data-testid="closeBtn">
             Close
           </Button>
         </Modal.Footer>
@@ -133,6 +140,7 @@ function FeedBackModal(props) {
             handleClose={handleClose}
           />
         )}
+        <ToastContainer />
       </Modal>
     </div>
   );
