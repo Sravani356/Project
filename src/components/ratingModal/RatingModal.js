@@ -8,6 +8,10 @@ import { MdSentimentNeutral } from "react-icons/md";
 import { VscSmiley } from "react-icons/vsc";
 import { GoSmiley } from "react-icons/go";
 import "./RatingModal.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const { REACT_APP_API_URL: apiBaseurl } = process.env;
 
 function RatingModal(props) {
   const [rating, setRating] = useState(0);
@@ -17,32 +21,34 @@ function RatingModal(props) {
   const handleCloseRating = () => {
     props.setShowRating(false);
   };
+
+
   const updateRating = (e) => {
     const value = e.target.value;
     setRating(value);
-    alertRatings(e);
-  };
-  const alertRatings = (e) => {
-    alert(`you have selected ${e.target.value} ratings`);
-  };
+    // alertRatings(e);
+    toast(`you have selected ${e.target.value} ratings`, {
+      position: "top-center",
+      theme: "dark"
+    });
 
-  const alertSuccess = (e) => {
-    alert("submitted successfully");
   };
-
-
 
   const feedbackSubmit = async (event) => {
     event.preventDefault();
 
     await axios
       .patch(
-        `http://localhost:5000/data/${props.id}`,
+        `${apiBaseurl}/data/${props.id}`,
         {
           reviews: [...props.data.reviews, props.feedBackDetails],
         },
-      )
-    alertSuccess(); //alert for successful submission 
+      );
+
+    toast("Submitted Successfully", {
+      position: "top-center",
+      theme: "light",
+    });
 
   };
   return (
@@ -97,6 +103,8 @@ function RatingModal(props) {
             Submit
           </Button>
         </Modal.Footer>
+        <ToastContainer data-testid="toast" />
+
       </Modal.Dialog>
     </div>
   );
