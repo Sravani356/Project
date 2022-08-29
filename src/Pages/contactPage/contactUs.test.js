@@ -5,6 +5,8 @@ import userEvent from '@testing-library/user-event'
 import GetInTouch from './GetInTouch';
 import axios from "axios";
 import { contactData, getInTouchData } from '../../Mock_Data';
+import { Provider } from 'react-redux';
+import { store } from "../../redux/store";
 
 //mocking is a process of providing a dummy response if any ajax call is made
 jest.mock("axios");
@@ -12,7 +14,11 @@ jest.mock("axios");
 
 test("ContactUs", () => {
     axios.get.mockResolvedValue({ data: contactData });
-    render(<ContactUs data={contactData}/>);
+    render(
+        <Provider store={store}>
+            <ContactUs data={contactData} />
+        </Provider>
+    );
     const todoList = waitFor(() => screen.findAllByTestId("contactUs"));
     expect(todoList).toBeDefined();
 });
@@ -31,9 +37,9 @@ test("GetInTouch", () => {
 
 test("onChange in GetInTouch Component", () => {
 
-    render(<GetInTouch />)
+    render(<GetInTouch data={getInTouchData}/>)
     const newUser = {
-        name: "Lakshmi",
+        name: "Sravani",
         email: "abc@gmail.com",
         phone: "6756453424",
         message: "nice"
@@ -48,6 +54,13 @@ test("onChange in GetInTouch Component", () => {
     userEvent.type(phoneInput, newUser.phone);
     userEvent.type(emailInput, newUser.email);
     userEvent.type(msgInput, newUser.number);
+})
+
+test("useEffect", () => {
+    jest.mock('React', () => ({
+        ...jest.requireActual('React'),
+        useEffect: jest.fn(),
+    }));
 })
 
 

@@ -14,7 +14,7 @@ export const Data = {
   cartCount: 0,
   reviews: [
     {
-      name: "Sravani",
+      username: "Sravani",
       email: "sravs@gmail.com",
       phone: "9998897888",
       rating: 3,
@@ -22,38 +22,38 @@ export const Data = {
     }
   ],
 
-    id: 2,
-    brand: "Mast & Harbour",
-    category: "Printed",
-    img: "Assets/images/images/Product2.png",
-    description: "Red and Blue checked casual shirt, has a spread collar, long sleeves, button placket, and curved hem",
-    fit: "Regular fit",
-    price: "Rs. 800/-",
-    discount: 0,
-    ratingsCount: 4,
-    ratingsValue: 350,
-    availibilityCount: 5,
-    cartCount: 0,
-    reviews: [
-      {
-        name: "Akash",
-        email: "as@gmail.com",
-        phone: "9998897888",
-        rating: 3,
-        date: "2021-09-20T04:21:35.155Z"
-      },
-      
-    ]
-  }
- 
+  id: 2,
+  brand: "Mast & Harbour",
+  category: "Printed",
+  img: "Assets/images/images/Product2.png",
+  description: "Red and Blue checked casual shirt, has a spread collar, long sleeves, button placket, and curved hem",
+  fit: "Regular fit",
+  price: "Rs. 800/-",
+  discount: 0,
+  ratingsCount: 4,
+  ratingsValue: 350,
+  availibilityCount: 5,
+  cartCount: 0,
+  reviews: [
+    {
+      username: "Akash",
+      email: "as@gmail.com",
+      phone: "9998897888",
+      rating: 3,
+      date: "2021-09-20T04:21:35.155Z"
+    },
+
+  ]
+}
+
 export const feedBackDetails = {
-  name: "Micky",
+  username: "Micky",
   mail: "mice@gmail.com",
   phone: 12345,
   rating: 0,
 };
 
-export const contactData = {
+export const contactData = [{
 
   id: 1,
   address: "280 ParK Avenue Z,Cross cut Complex, Bangalore, India",
@@ -63,14 +63,16 @@ export const contactData = {
   ],
   email: "contact@sparkclothing.com"
 
-}
+}]
 
 export const getInTouchData = [
   {
     id: 1,
-    name: "aswin",
-    email: "aswin210@gmail.com",
+    username: "sravani",
+    email: "sravz210@gmail.com",
     phone: "3333333123",
     message: "Hi"
   }
 ]
+
+

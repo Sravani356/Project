@@ -10,7 +10,7 @@ const Home = () => {
             <TabMenu />
         </>
 
-    )
-}
+    );
+};
 
 export default Home;

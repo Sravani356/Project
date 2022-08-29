@@ -1,11 +1,11 @@
-import React from 'react';
-import { Container, Navbar, NavbarBrand } from 'react-bootstrap';
+import React from "react";
+import { Container, Navbar, NavbarBrand } from "react-bootstrap";
 import "./Footer.css";
 
 function Footer() {
     return (
         <div id="footer" >
-            <Navbar style={{ backgroundColor: '#556b2f', bottom: 0 }}>
+            <Navbar style={{ backgroundColor: "#556b2f", bottom: 0 }}>
                 <Container id="container">
                     <NavbarBrand style={{ color: "white" }}>
                         <p className="text-center">copyright &copy; 2022 all rights reserved</p>
@@ -15,7 +15,7 @@ function Footer() {
         </div>
 
 
-    )
+    );
 }
 
-export default Footer
+export default Footer;

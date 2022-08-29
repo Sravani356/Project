@@ -1,25 +1,22 @@
-import { Col, Container, Row } from 'react-bootstrap';
-import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 
-import ProductCard from '../../components/card/ProductCard'
-import axios from 'axios'
+import ProductCard from "../../components/card/ProductCard";
+
+import { useSelector } from "react-redux";
+import { fetchProductData } from "../../services/services";
 
 function Products({ type }) {
 
-    const [products, setProducts] = useState([])
     const [categoryType, setCategoryType] = useState(type);
 
-    const fetchProductDetails = async () => {
-        const response = await axios.get("http://localhost:5000/data")
-        setProducts(response.data)
-    }
+    const { productData } = useSelector(state => state.productDetails);
+
 
     useEffect(() => {
-        if (products.length === 0) {
-            fetchProductDetails();
-        }
-        setCategoryType(type ? type : "All")
-    }, [categoryType, type, products])
+        fetchProductData();
+        setCategoryType(type ? type : "All");
+    }, [type]);
 
     return (
         <>
@@ -27,19 +24,19 @@ function Products({ type }) {
             <Container>
                 <Row>
                     {
-                        products.filter(({ category }) => categoryType === "All" || category === categoryType)
+                        productData?.filter(({ category }) => categoryType === "All" || category === categoryType)
                             .map((item) => {
                                 return (
                                     <Col sm={8} lg={3} md={3} key={item.id} data-testid="data">
                                         <ProductCard item={item}></ProductCard>
                                     </Col>
-                                )
+                                );
                             })
                     }
                 </Row>
             </Container>
         </>
-    )
+    );
 }
 
 export default Products;

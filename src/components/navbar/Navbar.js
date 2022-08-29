@@ -1,12 +1,12 @@
 import { Container, Nav, NavItem, Navbar } from "react-bootstrap";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import React from "react";
 
 function NavbarComponent() {
     return (
         <>
             <div>
-                <Navbar style={{ backgroundColor: '#556b2f' }} collapseOnSelect expand="lg" bg="#f5ee2w" variant="dark" className="fixed-top">
+                <Navbar style={{ backgroundColor: "#556b2f" }} collapseOnSelect expand="lg" bg="#f5ee2w" variant="dark" className="fixed-top">
                     <Container>
                         <Navbar.Brand href="/">
 

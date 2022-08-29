@@ -1,22 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React, { useState2, useEffect } from "react";
+import React from "react";
 import { Button, Col, Row, Form, Image } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./contactUs.css";
 import axios from "axios";
 
-function GetInTouch(props) {
+const { REACT_APP_API_URL: apiBaseurl } = process.env;
+
+function GetInTouch() {
+
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const formSubmitHandler = async (data) => {
 
-        await axios
-            .post("http://localhost:5000/getInTouchData", data, {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-    }
+        await axios.post(`${apiBaseurl}/getInTouchData`, data, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+    };
 
 
     return (
@@ -92,7 +94,7 @@ function GetInTouch(props) {
                 </Col>
             </Row>
         </div>
-    )
+    );
 }
 
 export default GetInTouch;

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Products from "../../Pages/productsPage/Products";
-import "./TabMenu.css"
+import "./TabMenu.css";
 
 
 function TabMenu() {

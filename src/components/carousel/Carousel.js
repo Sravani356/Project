@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
-// import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { Image } from 'react-bootstrap';
-// import "./carousel.css";
+import { Image } from "react-bootstrap";
 
 
 function HomePageCarousel() {

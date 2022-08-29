@@ -8,10 +8,11 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 import { BsTagFill } from "react-icons/bs";
 import { FaRupeeSign } from "react-icons/fa";
 import FeedBackModal from "../../components/feedBackModal/FeedBackModal";
-import './productDetails.css';
+import "./productDetails.css";
 import Reviews from "../../components/reviews/Reviews";
 import { MdReviews } from "react-icons/md";
 
+const { REACT_APP_API_URL: apiBaseurl } = process.env;
 
 export let handling = {
   handleShow: null,
@@ -27,13 +28,13 @@ function ProductDetail() {
 
   const fetchProductDetail = async () => {
     const response = await axios
-      .get(`http://localhost:5000/data/${id}`)
+      .get(`${apiBaseurl}/data/${id}`);
     setData(response.data);
   };
 
   useEffect(() => {
-    fetchProductDetail()
-  }, [id])  // eslint-disable-line react-hooks/exhaustive-deps
+    fetchProductDetail();
+  }, [id]);
 
   return (
     <Container>
@@ -42,7 +43,7 @@ function ProductDetail() {
           <Image data-testid="projectDetail_img" src={data.img} alt="image" />
           <hr />
           <Row>
-            <Col lg={11} style={{ color: '#556b2f' }}>
+            <Col lg={11} style={{ color: "#556b2f" }}>
               <h3><MdReviews /></h3>
               <h3 className="text-center" id="test">
                 Leave a Review{" "}
