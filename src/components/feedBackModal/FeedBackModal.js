@@ -22,7 +22,7 @@ function FeedBackModal(props) {
   };
 
 
-  const checktheuser = (val) => {
+  const checkTheUser = (val) => {
 
     setFeedBackDetails(val);
 
@@ -123,7 +123,7 @@ function FeedBackModal(props) {
             type="submit"
             className="btn-red"
             data-testid="next-click"
-            onClick={handleSubmit(checktheuser)}
+            onClick={handleSubmit(checkTheUser)}
           >
             Next
           </Button>

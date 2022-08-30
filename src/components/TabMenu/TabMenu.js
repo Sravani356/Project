@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { FaRegHandPointDown } from "react-icons/fa";
 import Products from "../../Pages/productsPage/Products";
 import "./TabMenu.css";
 
@@ -13,6 +14,12 @@ function TabMenu() {
   return (
     <div>
       <div className="tabContainer text-center">
+        <p className="mt-3 text"
+          style={{ color: "orangered", fontSize: "25px" }}>
+          <FaRegHandPointDown id="icon1" />
+          FILTER THE NEW ARRIVALS BY CATEGORY
+          <FaRegHandPointDown className="icon" />
+        </p>
         <Button
           variant="light"
           className="mr-3 bgHover tabMenu"
@@ -47,7 +54,7 @@ function TabMenu() {
         </Button>
       </div>
       <Products type={defaultType} />
-    </div>
+    </div >
   );
 }
 

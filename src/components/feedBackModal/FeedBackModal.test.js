@@ -12,7 +12,12 @@ describe("testing FeedBackModal", () => {
     test("The feedbackmodal component renders and simulating the button", async () => {
 
         // arrange and act
-        render(<FeedBackModal show={true} data={Data} setShow={jest.fn()} handleSubmit={jest.fn()} />)
+        render(<FeedBackModal
+            show={true} data={Data}
+            setShow={jest.fn()}
+            handleSubmit={jest.fn()}
+            setShowRating={jest.fn()}
+            setFeedBackDetails={jest.fn()} />)
 
         const rating = await screen.findByTestId("next-click");
         act(() => {
@@ -25,7 +30,12 @@ describe("testing FeedBackModal", () => {
     test("The feedbackmodal component renders and simulating the close button", async () => {
 
         // arrange and act
-        render(<FeedBackModal show={true} data={Data} setShow={jest.fn()} />)
+        render(<FeedBackModal
+            show={true} data={Data}
+            setShow={jest.fn()}
+            handleSubmit={jest.fn()}
+            setShowRating={jest.fn()}
+            setFeedBackDetails={jest.fn()} />)
 
         const closeBtn = await screen.findByTestId("closeBtn");
         expect(closeBtn).toBeTruthy();
@@ -34,7 +44,13 @@ describe("testing FeedBackModal", () => {
 
     test("user input is added after starting text", () => {
         // eslint-disable-next-line testing-library/render-result-naming-convention
-        const inputContainer = render(<FeedBackModal show={true} data={Data} setShow={jest.fn()}></FeedBackModal>);
+        const inputContainer =
+            render(<FeedBackModal
+                show={true} data={Data}
+                setShow={jest.fn()}
+                handleSubmit={jest.fn()}
+                setShowRating={jest.fn()}
+                setFeedBackDetails={jest.fn()} />)
         // eslint-disable-next-line testing-library/prefer-screen-queries
         const input = inputContainer.getByLabelText("Name");
         Simulate.change(input, { target: { value: "" } });
