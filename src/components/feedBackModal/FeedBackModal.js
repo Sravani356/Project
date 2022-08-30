@@ -17,6 +17,8 @@ function FeedBackModal(props) {
   const handleClose = (e) => {
     reset();
     props.setShow(false);
+    setShowRating(false);
+
   };
 
 

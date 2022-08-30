@@ -4,7 +4,7 @@ import "./Footer.css";
 
 function Footer() {
     return (
-        <div id="footer" >
+        <div className="footer" >
             <Navbar style={{ backgroundColor: "#556b2f", bottom: 0 }}>
                 <Container id="container">
                     <NavbarBrand style={{ color: "white" }}>

@@ -15,7 +15,7 @@
       "cartCount": 0,
       "reviews": [
         {
-          "name": "sravani",
+          "username": "sravani",
           "mail": "abc@gmail.com",
           "phone": "91234567",
           "message": "Hi",
@@ -43,11 +43,10 @@
           "mail": "abc@gmail.com",
           "phone": "9123456700",
           "message": "great",
-          "ratings": "3",
-          "date": "2022-08-09T12:08:34.513Z"
+          "ratings": "3"
         },
         {
-          "username": "alex",
+          "username": "Alex",
           "mail": "qwer@mail.com",
           "phone": "7567890987",
           "message": "Great Product!",
@@ -74,16 +73,21 @@
           "mail": "sravani@gmail.com",
           "phone": "9123456789",
           "message": "woww",
-          "ratings": "5",
-          "date": "2022-08-09T12:08:34.513Z"
+          "ratings": "5"
         },
         {
           "username": "jack",
           "mail": "sravani11@gmail.com",
           "phone": "9123456700",
           "message": "Very Comfy fit!",
-          "ratings": "5",
-          "date": "2022-08-09T12:08:34.513Z"
+          "ratings": "5"
+        },
+        {
+          "username": "Sha",
+          "mail": "sha@gmail.com",
+          "phone": "7567890987",
+          "message": "Superb!",
+          "ratings": "5"
         }
       ]
     },
@@ -106,8 +110,7 @@
           "mail": "abc@gmail.com",
           "phone": "7567890987",
           "message": "Great Quality!",
-          "ratings": "5",
-          "date": "2022-08-09T12:08:34.513Z"
+          "ratings": "5"
         }
       ]
     }
